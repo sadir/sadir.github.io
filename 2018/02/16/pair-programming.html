@@ -1,0 +1,390 @@
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Pair programming and Github coauthors | Morgan’s blog</title>
+<meta name="generator" content="Jekyll v3.9.0">
+<meta property="og:title" content="Pair programming and Github coauthors">
+<meta name="author" content="morgan">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="In this post, I’ll explore pair programming, the roles, the tradeoffs, and how Github’s coauthors compliment the pairing workflow.">
+<meta property="og:description" content="In this post, I’ll explore pair programming, the roles, the tradeoffs, and how Github’s coauthors compliment the pairing workflow.">
+<link rel="canonical" href="https://sadir.co.uk/2018/02/16/pair-programming.html">
+<meta property="og:url" content="https://sadir.co.uk/2018/02/16/pair-programming.html">
+<meta property="og:site_name" content="Morgan’s blog">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2018-02-16T18:53:44+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Pair programming and Github coauthors">
+<script type="application/ld+json">
+{"@type":"BlogPosting","description":"In this post, I’ll explore pair programming, the roles, the tradeoffs, and how Github’s coauthors compliment the pairing workflow.","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://sadir.co.uk/images/morgan-medium.jpg"},"name":"morgan"},"headline":"Pair programming and Github coauthors","dateModified":"2018-02-16T18:53:44+00:00","datePublished":"2018-02-16T18:53:44+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://sadir.co.uk/2018/02/16/pair-programming.html"},"url":"https://sadir.co.uk/2018/02/16/pair-programming.html","author":{"@type":"Person","name":"morgan"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link type="application/atom+xml" rel="alternate" href="https://sadir.co.uk/feed.xml" title="Morgan's blog">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/assets/sass/default.css">
+
+  <script src="/assets/js/go-squared.js"></script>
+
+<link rel="stylesheet" href="/assets/sass/nav.css">
+<header class="nav-header">
+  <nav>
+    <div id="logo">
+      <a href="/">
+        <img id="logo-image" src="/images/morgan-medium.jpg">
+      </a>
+    </div>
+    <div class="menu-items">
+      
+        <div class="menu-item">
+          <a class="menu-item-content" href="/about">
+            About
+          </a>
+        </div>
+      
+        <div class="menu-item">
+          <a class="menu-item-content" href="/cv">
+            CV
+          </a>
+        </div>
+      
+        <div class="menu-item">
+          <a class="menu-item-content" href="/posts">
+            Posts
+          </a>
+        </div>
+      
+        <div class="menu-item">
+          <a class="menu-item-content" href="/archives">
+            Archives
+          </a>
+        </div>
+      
+        <div class="menu-item">
+          <a class="menu-item-content" href="https://github.com/sadir/jekyll-sadir">
+            Get this theme
+          </a>
+        </div>
+      
+    </div>
+    <div id="mobile-menu-condensed">
+      <div id="burger-menu">
+        <label for="nav-toggle">
+          <div class="burger-line"></div>
+          <div class="burger-line"></div>
+          <div class="burger-line"></div>
+        </label>
+      </div>
+    </div>
+    <input type="checkbox" id="nav-toggle">
+    <div id="mobile-menu-opened">
+      <div id="menu-cross">
+        <label for="nav-toggle">
+          <div class="cross-line cross-line-1"></div>
+          <div class="cross-line cross-line-2"></div>
+        </label>
+      </div>
+      <ul class="mobile-menu-list">
+        
+          <li class="mobile-menu-item">
+            <a class="mobile-menu-item-content" href="/about">
+              About
+            </a>
+          </li>
+        
+          <li class="mobile-menu-item">
+            <a class="mobile-menu-item-content" href="/cv">
+              CV
+            </a>
+          </li>
+        
+          <li class="mobile-menu-item">
+            <a class="mobile-menu-item-content" href="/posts">
+              Posts
+            </a>
+          </li>
+        
+          <li class="mobile-menu-item">
+            <a class="mobile-menu-item-content" href="/archives">
+              Archives
+            </a>
+          </li>
+        
+          <li class="mobile-menu-item">
+            <a class="mobile-menu-item-content" href="https://github.com/sadir/jekyll-sadir">
+              Get this theme
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<section>
+  <link rel="stylesheet" href="/assets/sass/summary.css">
+<header class="summary">
+  <h1 class="summary-title">
+    <a href="/">
+      Morgan's blog
+    </a>
+  </h1>
+  <p class="summary-description">
+    Director of Engineering at Nested. I like tech, gym and food.
+  </p>
+</header>
+
+  <div class="content">
+    <link rel="stylesheet" href="/assets/sass/post.css">
+
+<header class="page-header">
+  
+  <h1 id="page-title" class="page-title p-name">Pair programming and Github coauthors
+</h1>
+</header>
+
+<p>In this post, I’ll explore pair programming, the roles, the tradeoffs, and how Github’s coauthors compliment the pairing workflow.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#what-is-pair-programming" id="markdown-toc-what-is-pair-programming">What is Pair Programming?</a></li>
+  <li>
+<a href="#the-navigator-role" id="markdown-toc-the-navigator-role">The Navigator Role</a>    <ul>
+      <li><a href="#context-earth_africa" id="markdown-toc-context-earth_africa">Context <img class="emoji" title=":earth_africa:" alt=":earth_africa:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f30d.png" height="20" width="20"></a></li>
+      <li><a href="#focus-eyes" id="markdown-toc-focus-eyes">Focus <img class="emoji" title=":eyes:" alt=":eyes:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f440.png" height="20" width="20"></a></li>
+      <li><a href="#a-blocker-removal-service-tractor" id="markdown-toc-a-blocker-removal-service-tractor">A blocker removal service <img class="emoji" title=":tractor:" alt=":tractor:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f69c.png" height="20" width="20"></a></li>
+      <li><a href="#coaching-clipboard" id="markdown-toc-coaching-clipboard">Coaching <img class="emoji" title=":clipboard:" alt=":clipboard:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4cb.png" height="20" width="20"></a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#what-are-the-pros-and-cons-of-pairing" id="markdown-toc-what-are-the-pros-and-cons-of-pairing">What are the pros and cons of pairing?</a>    <ul>
+      <li><a href="#common-pitfalls-1" id="markdown-toc-common-pitfalls-1">Common pitfalls 1</a></li>
+      <li><a href="#pairing-vs-code-reviews-2" id="markdown-toc-pairing-vs-code-reviews-2">Pairing vs Code Reviews 2</a></li>
+      <li><a href="#when-to-pair-and-when-not-to-3" id="markdown-toc-when-to-pair-and-when-not-to-3">When to pair and when not to 3</a></li>
+    </ul>
+  </li>
+  <li><a href="#pairing-at-nested" id="markdown-toc-pairing-at-nested">Pairing at Nested</a></li>
+  <li><a href="#git-and-pair-programming" id="markdown-toc-git-and-pair-programming">Git and pair programming</a></li>
+  <li><a href="#introducing-git-pairing-session" id="markdown-toc-introducing-git-pairing-session">Introducing <code class="language-plaintext highlighter-rouge">git-pairing-session</code>!</a></li>
+  <li><a href="#wrap-up" id="markdown-toc-wrap-up">Wrap up</a></li>
+</ul>
+
+<h2 id="what-is-pair-programming">What is Pair Programming?</h2>
+
+<p>To quote the <a href="https://en.wikipedia.org/wiki/Pair_programming">wikipedia page</a>:</p>
+
+<blockquote>
+  <p>Pair programming is an agile software development technique in which two programmers work together at one workstation. One, the driver, writes code while the other, the observer or navigator, reviews each line of code as it is typed in. The two programmers switch roles frequently.</p>
+</blockquote>
+
+<p>It’s about a lot more than just reviewing code though!</p>
+
+<h2 id="the-navigator-role">The Navigator Role</h2>
+
+<p>In the dynamic duo that is pair programming, the navigator is the ‘Q’ to the drivers ‘007’. <img class="emoji" title=":cop:" alt=":cop:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f46e.png" height="20" width="20"></p>
+
+<p>…The ‘operator’ to the drivers ‘Morpheus’… <img class="emoji" title=":sunglasses:" alt=":sunglasses:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f60e.png" height="20" width="20"></p>
+
+<p>…The ‘micro’ to the drivers ‘punisher’… <img class="emoji" title=":skull:" alt=":skull:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f480.png" height="20" width="20"></p>
+
+<p>…i need to get out more.</p>
+
+<p>Anyway you get the point, the navigator does other things and works as an enabler. The navigator provides:</p>
+
+<h3 id="context-earth_africa">Context <img class="emoji" title=":earth_africa:" alt=":earth_africa:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f30d.png" height="20" width="20">
+</h3>
+
+<p>The navigator maps the course, they provide context around the goal of exercise,
+why the pair is about to write code, who this change is for and why, how it fits
+into the bigger picture. They set direction on what do to next and keep track
+of new work that comes up as part of the coding exercise like refactoring, analytics or changes to dependencies.</p>
+
+<h3 id="focus-eyes">Focus <img class="emoji" title=":eyes:" alt=":eyes:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f440.png" height="20" width="20">
+</h3>
+
+<p>The navigator ensures the working environment is set up for proper focus.
+They ensure phones are away, that slack is closed.
+They maintain the focus on the task at hand, on the goal or the failing test if you’re doing TDD.</p>
+
+<h3 id="a-blocker-removal-service-tractor">A blocker removal service <img class="emoji" title=":tractor:" alt=":tractor:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f69c.png" height="20" width="20">
+</h3>
+
+<p>Similar to the principles of servant leadership, the navigator leads the pair by removing blockers.
+They get stuck in if the pair encounter one, by asking stimulating open ended questions
+like what do we know? Or what can we test to find out more? They collect information
+if more is needed or will be soon.</p>
+
+<h3 id="coaching-clipboard">Coaching <img class="emoji" title=":clipboard:" alt=":clipboard:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4cb.png" height="20" width="20">
+</h3>
+
+<p>The navigator reviews the work as it happens, challenging early where appropriate.
+The discussions this creates helps both parties improve. The navigator teaches
+the driver as they go, or conversely learns from the driver if they are less experienced.</p>
+
+<h2 id="what-are-the-pros-and-cons-of-pairing">What are the pros and cons of pairing?</h2>
+
+<p>Fundamentally, pairing is meant to increase the output of the programmers.  It does this through 
+increasing code quality,
+reducing the number of bugs,
+and reducing interruptions.</p>
+
+<p>It is great for learning, both in terms of knowledge sharing and reducing your <a href="https://en.wikipedia.org/wiki/Bus_factor">bus factor</a>.</p>
+
+<p>Also, most people overlook that effective pairing really brings a bunch of developers together into a cohesive team.</p>
+
+<p>These articles
+<a href="https://www.agilealliance.org/glossary/pairing/#q=~(filters~(postType~(~'page~'post~'aa_book~'aa_event_session~'aa_experience_report~'aa_glossary~'aa_research_paper~'aa_video)~tags~(~'pair*20programming))~searchTerm~'~sort~false~sortDirection~'asc~page~1)">1</a>
+ <a href="https://blog.codinghorror.com/pair-programming-vs-code-reviews/">2</a>
+ <a href="https://raygun.com/blog/how-good-is-pair-programming-really/">3</a>
+are also worth reading, they do a great job of explaining the pros and cons of pairing.</p>
+
+<h3 id="common-pitfalls-1">Common pitfalls <a href="https://www.agilealliance.org/glossary/pairing/#q=~(filters~(postType~(~'page~'post~'aa_book~'aa_event_session~'aa_experience_report~'aa_glossary~'aa_research_paper~'aa_video)~tags~(~'pair*20programming))~searchTerm~'~sort~false~sortDirection~'asc~page~1)">1</a>
+</h3>
+
+<blockquote>
+  <p>both programmers must be actively engaging with the task throughout a paired session, otherwise no benefit can be expected</p>
+</blockquote>
+
+<blockquote>
+  <p>a simplistic but often raised objection is that pairing “doubles costs”; that is a misconception based on equating programming with typing - however, one should be aware that this is the worst-case outcome of poorly applied pairing</p>
+</blockquote>
+
+<blockquote>
+  <p>at least the driver, and possibly both programmers, are expected to keep up a running commentary; pair programming is also “programming out loud” - if the driver is silent, the navigator should intervene</p>
+</blockquote>
+
+<blockquote>
+  <p>pair programming cannot be fruitfully forced upon people, especially if relationship issues, including the most mundane (such as personal hygiene), are getting in the way; solve these first!</p>
+</blockquote>
+
+<h3 id="pairing-vs-code-reviews-2">Pairing vs Code Reviews <a href="https://blog.codinghorror.com/pair-programming-vs-code-reviews/">2</a>
+</h3>
+
+<blockquote>
+  <p>I can’t help wondering if pair programming is nothing more than code review on steroids.</p>
+</blockquote>
+
+<blockquote>
+  <p>But code reviews aren’t a panacea, either, as Marty Fried pointed out: My experience with code reviews has been a mixed bag. One of the problems seems to be that nobody wants to spend the time to really understand new code that does anything non-trivial, so the feedback is usually very general.</p>
+</blockquote>
+
+<blockquote>
+  <p>The advantage of pair programming is its gripping immediacy: it is impossible to ignore the reviewer when he or she is sitting right next to you. Most people will passively opt out if given the choice. With pair programming, that’s not possible.</p>
+</blockquote>
+
+<blockquote>
+  <p>Each half of the pair has to understand the code, right then and there, as it’s being written. Pairing may be invasive, but it can also force a level of communication that you’d otherwise never achieve.</p>
+</blockquote>
+
+<h3 id="when-to-pair-and-when-not-to-3">When to pair and when not to <a href="https://raygun.com/blog/how-good-is-pair-programming-really/">3</a>
+</h3>
+
+<blockquote>
+  <p>Since pair programming will/should increase the concentration for both, it may not always be the case. Many tasks may not be suitable for a pair. Simple tasks for example. What is a simple task depends on the experience. For a difficult task, either a solo senior could solve it or a pair of juniors. Or maybe it’s touching a core feature so having a senior – junior combination might be a good opportunity to strengthen the junior skills and knowledge.</p>
+</blockquote>
+
+<h2 id="pairing-at-nested">Pairing at <a href="https://nested.com">Nested</a>
+</h2>
+
+<p>At my <a href="https://nested.com/careers">current employer</a>, we treat pairing as a tool, and we try and make best use of that tool whenever we can. Here is the process we follow:</p>
+
+<ol>
+  <li>You make sure you’re ready and comfortable (food, drink, respond to loved ones, etc.)</li>
+  <li>The driver starts a timer for 25 minutes. We use <a href="https://xwavesoft.com/be-focused-pro-for-iphone-ipad-mac-os-x.html">be focused</a>.</li>
+  <li>The navigator states our goals, and which test we should start with.</li>
+  <li>We follow TDD, writing tests and then code until we meet the stated goal.</li>
+  <li>If we have reached our goal, we pick a new goal and return to step 3.</li>
+  <li>If the timer runs out, we take a 5 minute break, then swap seats and return to step 2.</li>
+  <li>In this break we actually take a break. No email, messenger or phones.</li>
+  <li>After each iteration of both members of the pair having been the driver, we take an extra 5 minute break to repond to messages.</li>
+</ol>
+
+<p>We try and stick to these rules, because it gives us large periods of focus in which we can get stuff done and helps maximise the benefits we went over earlier.</p>
+
+<p>This isn’t the only way to do things though, perhaps one day we will try things like <a href="http://wiki.c2.com/?PairProgrammingPingPongPattern">ping pong pairing</a>.</p>
+
+<h2 id="git-and-pair-programming">Git and pair programming</h2>
+
+<p>Git is a widely used and very popular version control system. It powers sites like Github or self hosted tools like Gitlab.</p>
+
+<p>One of the major benefits of Git is that it keeps and documents a history of your codebase through <a href="https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History">commits</a>.</p>
+
+<p><a href="https://chris.beams.io/posts/git-commit/">Chris Beams</a> does a great job of explaining why good git commits are important.</p>
+
+<p>When pairing, we want to extend the priciples Chris explains in his article. Unfortunately when Git was created, pairing wasn’t as popular as it is today, so Git doesn’t have a lot of support for pairing.</p>
+
+<p>Git only has concepts of an author and a committer,
+which at first glance might seem a bit confusing (aren’t they the same person?) but
+<a href="https://stackoverflow.com/questions/18750808/difference-between-author-and-committer-in-git">this answer on stackoverflow</a>
+explains the difference quite well.</p>
+
+<blockquote>
+  <p>The author is the person who originally wrote the patch, whereas the committer is the person who last applied the patch. So, if you send in a patch to a project and one of the core members applies the patch, both of you get credit — you as the author and the core member as the committer.</p>
+</blockquote>
+
+<p>This doesn’t quite cover our use case here though when pairing, as we have two authors and two committers.</p>
+
+<p>We don’t want to lose the history of who worked on the code, as this might be valuable at a later date. So how can we record both authors as we go?</p>
+
+<h2 id="introducing-git-pairing-session">Introducing <a href="https://github.com/sadir/git-pairing-session"><code class="language-plaintext highlighter-rouge">git-pairing-session</code></a>!</h2>
+
+<p>Thankfully recently Github announced support for <a href="https://help.github.com/articles/creating-a-commit-with-multiple-authors/">multiple coauthors</a>!</p>
+
+<p>This means that while git itself doesn’t support more than one author, Github can keep track of this for us through a commit convention.</p>
+
+<p>This is great, and if you use Github desktop software then <a href="https://stackoverflow.com/questions/48511133/how-to-create-github-commits-with-multiple-authors">it’s pretty easy</a> to get started adding coauthors.</p>
+
+<p>But if, like me, you prefer the command line to an external app then it could get pretty tedious typing out those commit messages each time.
+Luckily, I’ve written <a href="https://github.com/sadir/git-pairing-session">a little repo</a> to help manage a list of coauthors and start and stop pairing sessions!</p>
+
+<p>Here’s how it works. Assuming you’ve followed the setup in the repo, you can start recording coauthors by handing in the initials of your colleague.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pairing_with ms
+</code></pre></div></div>
+
+<p>With every commit made after that, you and your coauthor are automatically recorded in the commits as per the convention.</p>
+
+<p>When you’re done, you can just stop the session and stop recording coauthors.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>no_longer_pairing
+</code></pre></div></div>
+
+<p>If you forgot to set up your pairing session, you can just add coauthors to the whole branch instead.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>paired_with ms
+</code></pre></div></div>
+
+<p>Either way, when you’re done, your commits in Github will end up looking like this.</p>
+
+<p><img src="https://i.imgur.com/2Yu1IdT.png" alt="github coauthored commit screenshot"></p>
+
+<p>Much better!</p>
+
+<h2 id="wrap-up">Wrap up</h2>
+
+<p>Pairing is good, when you use it properly. The better you understand it’s tradeoffs, the better use you’ll make of it as a tool.</p>
+
+<p>There are plenty of ways you can pair, find a way that works for you and your team.</p>
+
+<p>Pairing with Github and <a href="https://github.com/sadir/git-pairing-session"><code class="language-plaintext highlighter-rouge">git-pairing-session</code></a> is the easiest way to follow commit best practices.</p>
+
+
+  </div>
+</section>
+<link rel="stylesheet" href="/assets/sass/footer.css">
+<footer id="footer">
+    <div class="footer-icons">
+<a class="footer-icon" href="https://twitter.com/sadir_">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path fill="currentColor" d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-48.9 158.8c.2 2.8.2 5.7.2 8.5 0 86.7-66 186.6-186.6 186.6-37.2 0-71.7-10.8-100.7-29.4 5.3.6 10.4.8 15.8.8 30.7 0 58.9-10.4 81.4-28-28.8-.6-53-19.5-61.3-45.5 10.1 1.5 19.2 1.5 29.6-1.2-30-6.1-52.5-32.5-52.5-64.4v-.8c8.7 4.9 18.9 7.9 29.6 8.3a65.447 65.447 0 0 1-29.2-54.6c0-12.2 3.2-23.4 8.9-33.1 32.3 39.8 80.8 65.8 135.2 68.6-9.3-44.5 24-80.6 64-80.6 18.9 0 35.9 7.9 47.9 20.7 14.8-2.8 29-8.3 41.6-15.8-4.9 15.2-15.2 28-28.8 36.1 13.2-1.4 26-5.1 37.8-10.2-8.9 13.1-20.1 24.7-32.9 34z"></path></svg>
+
+        </a><a class="footer-icon" href="https://www.linkedin.com/in/morgan-sadr-hashemi/">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+
+        </a><a class="footer-icon" href="https://github.com/sadir">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path fill="currentColor" d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1 1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8 3.4zm-12.3-5.4c-.9 1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9 4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1 1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6 1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z"></path></svg>
+
+        </a><a class="footer-icon" href="/feed.xml">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path fill="currentColor" d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zM112 416c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm157.533 0h-34.335c-6.011 0-11.051-4.636-11.442-10.634-5.214-80.05-69.243-143.92-149.123-149.123-5.997-.39-10.633-5.431-10.633-11.441v-34.335c0-6.535 5.468-11.777 11.994-11.425 110.546 5.974 198.997 94.536 204.964 204.964.352 6.526-4.89 11.994-11.425 11.994zm103.027 0h-34.334c-6.161 0-11.175-4.882-11.427-11.038-5.598-136.535-115.204-246.161-251.76-251.76C68.882 152.949 64 147.935 64 141.774V107.44c0-6.454 5.338-11.664 11.787-11.432 167.83 6.025 302.21 141.191 308.205 308.205.232 6.449-4.978 11.787-11.432 11.787z"></path></svg>
+
+        </a>
+</div>
+    <p>Feedback welcome via github issues</p>
+</footer>
+
